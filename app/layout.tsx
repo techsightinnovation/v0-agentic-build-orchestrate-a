@@ -11,21 +11,21 @@ const _courierPrime = Courier_Prime({ weight: ["400", "700"], subsets: ["latin"]
 const _ibmPlexSans = IBM_Plex_Sans({ weight: ["300", "400", "500", "600"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Agentic — Autonomous AI Agents at Scale',
-  description: 'Deploy autonomous AI agents that think, act, and execute across any workflow. Connect 200+ integrations, run agents in parallel, and ship faster with the Agentic platform.',
-  keywords: ['AI agents', 'autonomous agents', 'LLM orchestration', 'AI automation', 'multi-agent platform'],
-  authors: [{ name: 'Agentic' }],
+  title: 'TechSight Innovations — AI Implementation & Training for SMEs',
+  description: 'TechSight Innovations FZE LLC delivers practical, affordable, and industry-relevant AI implementation and training services for SMEs across the UAE and GCC. Empowering Technology. Securing the Future.',
+  keywords: ['AI implementation', 'AI training', 'SME AI adoption', 'UAE AI consulting', 'GCC AI services', 'Microsoft Copilot', 'AI readiness'],
+  authors: [{ name: 'TechSight Innovations FZE LLC' }],
   openGraph: {
-    title: 'Agentic — Autonomous AI Agents at Scale',
-    description: 'Deploy autonomous AI agents that think, act, and execute across any workflow.',
+    title: 'TechSight Innovations — AI Implementation & Training for SMEs',
+    description: 'Practical, affordable AI implementation and training services for SMEs across the UAE and GCC.',
     type: 'website',
-    url: 'https://agentic.ai',
-    siteName: 'Agentic',
+    url: 'https://www.techsightinnovations.com',
+    siteName: 'TechSight Innovations',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Agentic — Autonomous AI Agents at Scale',
-    description: 'Deploy autonomous AI agents that think, act, and execute across any workflow.',
+    title: 'TechSight Innovations — AI Implementation & Training for SMEs',
+    description: 'Practical, affordable AI implementation and training services for SMEs across the UAE and GCC.',
   },
   icons: {
     icon: [

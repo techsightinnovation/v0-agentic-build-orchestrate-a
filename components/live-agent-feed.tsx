@@ -3,35 +3,35 @@
 import { useEffect, useState, useRef } from "react"
 
 const AGENT_NAMES = [
-  "analyst-7f2a", "executor-3b1c", "monitor-9d4e", "researcher-2c8f",
-  "planner-5a3d", "writer-1e9b", "auditor-4f2c", "coder-8d1a",
-  "reviewer-6b3e", "scheduler-0c7f",
+  "retail-dxb", "logistics-shj", "clinic-auh", "legal-dxb",
+  "trading-rak", "realty-dxb", "construct-auh", "ecom-shj",
+  "accounting-dxb", "distrib-ajm",
 ]
 
 const TASKS = [
-  "Reviewing 14 open PRs on main branch",
-  "Summarizing weekly Slack threads",
-  "Generating Q2 financial report",
-  "Running integration test suite",
-  "Scraping competitor pricing data",
-  "Drafting 23 cold emails from CRM",
-  "Parsing inbound invoices → DB",
-  "Monitoring uptime across 8 regions",
-  "Refactoring auth module — 3 files",
-  "Analyzing user churn signals",
-  "Syncing Notion docs with Linear",
-  "Tagging 1,200 support tickets",
-  "Deploying to staging environment",
-  "Processing webhook payloads",
+  "Automating invoice capture → ERP",
+  "Drafting bilingual sales proposals",
+  "Forecasting monthly inventory needs",
+  "Triaging inbound customer queries",
+  "Reviewing supplier contracts",
+  "Generating Q2 management report",
+  "Qualifying and routing new leads",
+  "Summarizing weekly team meetings",
+  "Reconciling accounts payable",
+  "Tagging and routing support tickets",
+  "Translating marketing campaigns",
+  "Monitoring compliance checklist",
+  "Optimizing last-mile delivery routes",
+  "Personalizing email campaigns",
 ]
 
-const REGIONS = ["us-east", "eu-west", "ap-south", "us-west", "eu-central"]
+const REGIONS = ["dubai", "abu-dhabi", "sharjah", "ajman", "ras-al-khaimah"]
 const STATUSES = [
-  { label: "running",  color: "#4ade80" },
-  { label: "running",  color: "#4ade80" },
-  { label: "running",  color: "#4ade80" },
-  { label: "queued",   color: "#facc15" },
-  { label: "complete", color: "#60a5fa" },
+  { label: "live",    color: "#4ade80" },
+  { label: "live",    color: "#4ade80" },
+  { label: "live",    color: "#4ade80" },
+  { label: "pilot",   color: "#facc15" },
+  { label: "scaled",  color: "#60a5fa" },
 ]
 
 type AgentRow = {
@@ -88,12 +88,12 @@ function ProgressBar({ initial }: { initial: number }) {
 
 // Stable seed rows — same on server and client, no random values
 const SEED_ROWS: AgentRow[] = [
-  { id: "A1B2C3", name: "analyst-7f2a",    task: "Generating Q2 financial report",       region: "us-east",    status: STATUSES[0], progress: 42, elapsed: "3m 12s", key: 0 },
-  { id: "D4E5F6", name: "executor-3b1c",   task: "Running integration test suite",       region: "eu-west",    status: STATUSES[0], progress: 67, elapsed: "7m 48s", key: 1 },
-  { id: "G7H8I9", name: "researcher-2c8f", task: "Scraping competitor pricing data",     region: "us-west",    status: STATUSES[3], progress: 18, elapsed: "1m 05s", key: 2 },
-  { id: "J0K1L2", name: "planner-5a3d",    task: "Syncing Notion docs with Linear",      region: "eu-central", status: STATUSES[0], progress: 55, elapsed: "5m 30s", key: 3 },
-  { id: "M3N4O5", name: "coder-8d1a",      task: "Refactoring auth module — 3 files",    region: "ap-south",   status: STATUSES[0], progress: 80, elapsed: "11m 22s", key: 4 },
-  { id: "P6Q7R8", name: "monitor-9d4e",    task: "Monitoring uptime across 8 regions",   region: "us-east",    status: STATUSES[4], progress: 99, elapsed: "14m 01s", key: 5 },
+  { id: "A1B2C3", name: "accounting-dxb", task: "Generating Q2 management report",      region: "dubai",         status: STATUSES[0], progress: 42, elapsed: "3m 12s", key: 0 },
+  { id: "D4E5F6", name: "logistics-shj",  task: "Optimizing last-mile delivery routes", region: "sharjah",       status: STATUSES[0], progress: 67, elapsed: "7m 48s", key: 1 },
+  { id: "G7H8I9", name: "retail-dxb",     task: "Forecasting monthly inventory needs",  region: "dubai",         status: STATUSES[3], progress: 18, elapsed: "1m 05s", key: 2 },
+  { id: "J0K1L2", name: "realty-dxb",     task: "Qualifying and routing new leads",     region: "abu-dhabi",     status: STATUSES[0], progress: 55, elapsed: "5m 30s", key: 3 },
+  { id: "M3N4O5", name: "legal-dxb",      task: "Reviewing supplier contracts",         region: "ras-al-khaimah",status: STATUSES[0], progress: 80, elapsed: "11m 22s", key: 4 },
+  { id: "P6Q7R8", name: "clinic-auh",     task: "Triaging inbound customer queries",    region: "abu-dhabi",     status: STATUSES[4], progress: 99, elapsed: "14m 01s", key: 5 },
 ]
 
 export function LiveAgentFeed() {
@@ -128,7 +128,7 @@ export function LiveAgentFeed() {
         borderBottom: "1px solid rgba(0,0,0,0.06)",
         background: "rgba(0,0,0,0.03)",
       }}>
-        {["AGENT", "TASK", "REGION", "STATUS"].map(h => (
+        {["CLIENT", "AI WORKFLOW", "EMIRATE", "STATUS"].map(h => (
           <span key={h} style={{ fontSize: 8, letterSpacing: "0.16em", color: "rgba(0,0,0,0.30)", fontFamily: "monospace" }}>{h}</span>
         ))}
       </div>
@@ -171,8 +171,8 @@ export function LiveAgentFeed() {
               <span style={{
                 width: 5, height: 5, borderRadius: "50%",
                 background: row.status.color,
-                boxShadow: row.status.label === "running" ? `0 0 6px ${row.status.color}` : "none",
-                animation: row.status.label === "running" ? "statusPulse 2s ease-in-out infinite" : "none",
+                boxShadow: row.status.label === "live" ? `0 0 6px ${row.status.color}` : "none",
+                animation: row.status.label === "live" ? "statusPulse 2s ease-in-out infinite" : "none",
                 flexShrink: 0,
               }} />
               <span style={{ fontSize: 8, fontFamily: "monospace", color: "rgba(0,0,0,0.35)" }}>{row.status.label}</span>

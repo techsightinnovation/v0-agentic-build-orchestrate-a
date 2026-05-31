@@ -149,15 +149,15 @@ export default function AgenticPage() {
               transition: "opacity 1s cubic-bezier(0.16,1,0.3,1) 0ms, filter 1s cubic-bezier(0.16,1,0.3,1) 0ms, transform 1s cubic-bezier(0.16,1,0.3,1) 0ms",
             }}
           >
-            Build &amp;<br />orchestrate AI<br />agents while<br />you sleep.
+            Practical AI<br />for the GCC&apos;s<br />small &amp; mid-<br />sized firms.
           </h1>
 
           {/* 3 metrics — staggered after title */}
           <div className="flex gap-8 sm:gap-12">
             {[
-              { value: "50M+", label: "Tasks" },
-              { value: "99.9%", label: "Uptime" },
-              { value: "180+", label: "Countries" },
+              { value: "557K+", label: "UAE SMEs" },
+              { value: "26+", label: "Years Experience" },
+              { value: "40%", label: "of GDP" },
             ].map((stat, i) => (
               <div
                 key={i}
@@ -181,9 +181,9 @@ export default function AgenticPage() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <PixelIcon type="platform" size={40} />
-            <div className="mt-4"><Tag>PLATFORM</Tag></div>
+            <div className="mt-4"><Tag>SERVICES</Tag></div>
             <RevealText className="mt-5 text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.05]">
-              {"Everything you need\nto ship agents."}
+              {"Everything your SME needs\nto adopt AI."}
             </RevealText>
           </div>
 
@@ -217,9 +217,9 @@ export default function AgenticPage() {
                 <div className="w-10 h-10 rounded-xl border border-black/10 bg-white/60 flex items-center justify-center mb-6" style={{ backdropFilter: "blur(8px)" }}>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><path d="m4.93 4.93 2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/></svg>
                 </div>
-                <h3 className="text-xl font-light mb-3">Visual Agent Builder</h3>
+                <h3 className="text-xl font-light mb-3">AI Readiness Assessment &amp; Strategy</h3>
                 <p className="text-sm text-black/45 leading-relaxed max-w-sm">
-                  Drag, connect, and configure agents through an intuitive graph editor. No boilerplate. Ship in minutes, not days.
+                  We map where AI can move the needle for your business using our proprietary SME AI Readiness Framework — then build a practical, ROI-driven roadmap.
                 </p>
               </div>
             </BentoCard>
@@ -229,24 +229,24 @@ export default function AgenticPage() {
               <div className="w-10 h-10 rounded-xl border border-black/10 flex items-center justify-center mb-5">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
               </div>
-              <h3 className="text-lg font-light mb-2">Real-time Monitoring</h3>
-              <p className="text-sm text-black/45 leading-relaxed">Trace every decision. Debug with full execution history and live logs.</p>
+              <h3 className="text-lg font-light mb-2">AI Tool Implementation</h3>
+              <p className="text-sm text-black/45 leading-relaxed">Deploy Microsoft Copilot, ChatGPT Enterprise, and automation platforms — configured for your workflows.</p>
             </BentoCard>
 
             <BentoCard className="col-span-12 md:col-span-4 p-8 min-h-[200px]" delay={160}>
               <div className="w-10 h-10 rounded-xl border border-black/10 flex items-center justify-center mb-5">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10h8M8 14h5"/></svg>
               </div>
-              <h3 className="text-lg font-light mb-2">Memory & Context</h3>
-              <p className="text-sm text-black/45 leading-relaxed">Persistent long-term memory across sessions. Agents learn from every interaction.</p>
+              <h3 className="text-lg font-light mb-2">Employee AI Literacy Training</h3>
+              <p className="text-sm text-black/45 leading-relaxed">Bilingual Arabic-English programs that upskill your whole team — from front desk to leadership.</p>
             </BentoCard>
 
             <BentoCard className="col-span-12 md:col-span-4 p-8 min-h-[200px]" delay={200}>
               <div className="w-10 h-10 rounded-xl border border-black/10 flex items-center justify-center mb-5">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
-              <h3 className="text-lg font-light mb-2">Guardrails & Permissions</h3>
-              <p className="text-sm text-black/45 leading-relaxed">Define what agents can and cannot do. Fine-grained access control per tool.</p>
+              <h3 className="text-lg font-light mb-2">AI Support &amp; Governance</h3>
+              <p className="text-sm text-black/45 leading-relaxed">Ongoing retainer with quarterly optimization reviews, governance, and responsible-AI guardrails.</p>
             </BentoCard>
           </div>
         </div>
@@ -258,13 +258,13 @@ export default function AgenticPage() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
             <div>
               <PixelIcon type="agents" size={40} />
-              <div className="mt-4"><Tag>AGENT TYPES</Tag></div>
+              <div className="mt-4"><Tag>INDUSTRIES</Tag></div>
               <RevealText className="mt-5 text-4xl md:text-5xl font-light tracking-tight leading-[1.05]">
-                {"Plug-and-play agents\nready to deploy."}
+                {"AI built for your\nindustry, not theory."}
               </RevealText>
             </div>
             <p className="text-sm text-black/45 leading-relaxed max-w-xs">
-              Start with a pre-built agent or compose your own from primitives. Every agent is versioned, testable, and observable.
+              We bring deep GCC market context and a proven track record across the sectors with the highest operational repetition and data volume.
             </p>
           </div>
 
@@ -277,18 +277,18 @@ export default function AgenticPage() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <PixelIcon type="workflow" size={40} />
-            <div className="mt-4"><Tag>WORKFLOW</Tag></div>
+            <div className="mt-4"><Tag>OUR APPROACH</Tag></div>
             <RevealText className="mt-5 text-4xl md:text-5xl font-light tracking-tight leading-[1.05]">
-              {"From idea to running agent\nin four steps."}
+              {"From assessment to impact,\na proven methodology."}
             </RevealText>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-3" onMouseMove={handleMouse}>
             {[
-              { n: "01", title: "Define",  desc: "Describe your agent in plain language. Set objectives, tools, and boundaries.", delay: 0,   img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/define-5aafAmGBrxZpOqJ3XLHY3n3qzC2I5K.png" },
-              { n: "02", title: "Compose", desc: "Chain agents together in the visual editor. Wire triggers, conditions, and outputs.", delay: 80,  img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/compose-5RT5VR4f1Y3GoFmovqTKLTG4UXp3g2.png" },
-              { n: "03", title: "Test",    desc: "Run sandboxed simulations. Inspect every decision in the execution trace.", delay: 140, img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/test-zm8guZwxJHtwWsJ7XO4B0CF7GzlNK8.png" },
-              { n: "04", title: "Deploy",  desc: "Push globally in one click. Agents auto-scale, self-heal, and report back.", delay: 200, img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/deploy-an8fgHSLzniojkcmRyGGIFQUJF9T5J.png" },
+              { n: "01", title: "Discover", desc: "AI Readiness Assessment in weeks 1–2. We audit processes, data, and team capability.", delay: 0,   img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/define-5aafAmGBrxZpOqJ3XLHY3n3qzC2I5K.png" },
+              { n: "02", title: "Design",   desc: "Solution architecture and ROI mapping. We pick the right tools for measurable wins.", delay: 80,  img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/compose-5RT5VR4f1Y3GoFmovqTKLTG4UXp3g2.png" },
+              { n: "03", title: "Deploy",   desc: "Pilot AI tools with a single department, then refine before scaling organization-wide.", delay: 140, img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/test-zm8guZwxJHtwWsJ7XO4B0CF7GzlNK8.png" },
+              { n: "04", title: "Train",    desc: "Employee enablement across all levels, then sustain with governance and quarterly reviews.", delay: 200, img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/deploy-an8fgHSLzniojkcmRyGGIFQUJF9T5J.png" },
             ].map((step) => (
               <BentoCard key={step.n} className="relative overflow-hidden flex flex-col min-h-[320px]" delay={step.delay}>
                 {/* Image at top — mask fades it out strongly before the bottom edge */}
@@ -324,13 +324,13 @@ export default function AgenticPage() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
             <div>
               <PixelIcon type="integrations" size={40} />
-              <div className="mt-4"><Tag>INTEGRATIONS</Tag></div>
+              <div className="mt-4"><Tag>TECHNOLOGY</Tag></div>
               <RevealText className="mt-5 text-4xl md:text-5xl font-light tracking-tight leading-[1.05]">
-                {"Connect any tool.\nControl any system."}
+                {"Best-in-class tools.\nVendor-neutral advice."}
               </RevealText>
             </div>
             <p className="text-sm text-black/45 leading-relaxed max-w-xs">
-              200+ native connectors. Everything from Slack to your internal database. Build custom tools with our SDK in minutes.
+              Microsoft 365 Copilot, Azure AI, OpenAI, Make.com, n8n, Hugging Face and Power BI — we implement the right stack for your goals, not a vendor&apos;s.
             </p>
           </div>
 
@@ -356,16 +356,16 @@ export default function AgenticPage() {
                   background: "rgba(255,255,255,0.60)",
                 }}
               >
-                <Tag>SDK</Tag>
-                <h3 className="mt-3 text-lg font-light mb-2">Build custom tools</h3>
-                <p className="text-xs text-black/45 leading-relaxed mb-4">Define any function as a tool your agents can call. TypeScript and Python.</p>
+                <Tag>WORKFLOW</Tag>
+                <h3 className="mt-3 text-lg font-light mb-2">Custom automations</h3>
+                <p className="text-xs text-black/45 leading-relaxed mb-4">We wire your apps together with Make.com and n8n — no engineering team required.</p>
                 <div className="bg-black/[0.05] rounded-lg border border-black/[0.07] p-3 font-mono text-[11px] text-black/50 leading-relaxed">
-                  <span className="text-black/25">// tool definition</span><br />
-                  <span className="text-blue-600/70">defineTool</span>{"({"}<br />
-                  {"  "}<span className="text-amber-700/70">name</span>: <span className="text-green-700/70">&apos;fetchPrice&apos;</span>,<br />
-                  {"  "}<span className="text-amber-700/70">run</span>: <span className="text-black/35">async (q) </span>={">"}<br />
-                  {"    "}<span className="text-blue-600/70">api</span>.get(q)<br />
-                  {"})"}
+                  <span className="text-black/25"># invoice automation</span><br />
+                  <span className="text-blue-600/70">on</span>{" email.received"}<br />
+                  {"  "}<span className="text-amber-700/70">extract</span>: <span className="text-green-700/70">&apos;invoice&apos;</span><br />
+                  {"  "}<span className="text-amber-700/70">post</span>: <span className="text-black/35">accounting </span>={">"}<br />
+                  {"    "}<span className="text-blue-600/70">erp</span>.sync()<br />
+                  {""}
                 </div>
               </div>
 
@@ -379,9 +379,9 @@ export default function AgenticPage() {
               >
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-2 h-2 rounded-full bg-emerald-500/80 animate-pulse" />
-                  <span className="text-xs text-black/40 tracking-widest">LIVE API</span>
+                  <span className="text-xs text-black/40 tracking-widest">ONGOING SUPPORT</span>
                 </div>
-                <p className="text-sm text-black/45">Full REST + WebSocket API. Stream agent outputs directly into your product.</p>
+                <p className="text-sm text-black/45">Bilingual support and quarterly optimization reviews keep your AI delivering after go-live.</p>
               </div>
             </div>
           </div>
@@ -393,9 +393,9 @@ export default function AgenticPage() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <PixelIcon type="platform" size={40} />
-            <div className="mt-4"><Tag>SECURITY</Tag></div>
+            <div className="mt-4"><Tag>WHY TECHSIGHT</Tag></div>
             <RevealText className="mt-5 text-4xl md:text-5xl font-light tracking-tight leading-[1.05]">
-              {"Enterprise-grade\nfrom day one."}
+              {"Practitioner expertise,\ngoverned responsibly."}
             </RevealText>
           </div>
 
@@ -404,14 +404,14 @@ export default function AgenticPage() {
             {/* Left side — descriptions */}
             <div className="space-y-6">
               <p className="text-sm text-black/45 leading-relaxed">
-                Every action is logged, every decision is traceable. Built for teams that need compliance without compromise.
+                Unlike global consultancies applying generic enterprise frameworks, our AI practice is built on real deployment experience across the GCC mid-market.
               </p>
 
               <div className="space-y-4">
                 {[
-                  { label: "SOC 2 Type II", desc: "Independently audited security controls" },
-                  { label: "Full Audit Trail", desc: "Every decision logged with full traceability" },
-                  { label: "Real-time Observability", desc: "Monitor, debug, and replay any execution" },
+                  { label: "26+ Years in the GCC", desc: "Deep regional context across ERP, security, and infrastructure" },
+                  { label: "Bilingual Delivery", desc: "Arabic-English training, documentation, and support" },
+                  { label: "Responsible AI Governance", desc: "Data privacy, human oversight, and clear usage policies" },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-4">
                     <div className="w-1 bg-black/10 rounded-full shrink-0" />
@@ -425,7 +425,7 @@ export default function AgenticPage() {
 
               {/* Compliance badges — vertical stack */}
               <div className="pt-4 flex flex-col gap-2">
-                {["SOC 2", "GDPR", "HIPAA Ready", "ISO 27001"].map((badge) => (
+                {["UAE Data Protection", "GDPR Aligned", "ISO 27001", "Responsible AI"].map((badge) => (
                   <div key={badge} className="flex items-center gap-2 text-xs text-black/25">
                     <span className="w-1 h-1 rounded-full bg-black/25" />
                     {badge}
@@ -436,14 +436,14 @@ export default function AgenticPage() {
 
             {/* Right side — live audit log visualization */}
             <BentoCard className="p-6 lg:row-span-1" delay={0}>
-              <div className="text-xs text-black/30 tracking-widest uppercase mb-4">Live Audit Trail</div>
+              <div className="text-xs text-black/30 tracking-widest uppercase mb-4">Engagement Timeline</div>
               <div className="space-y-2">
                 {[
-                  { time: "12:34:21", action: "agent_executed", status: "success" },
-                  { time: "12:34:18", action: "decision_logged", status: "success" },
-                  { time: "12:34:15", action: "tool_called", status: "success" },
-                  { time: "12:34:12", action: "memory_updated", status: "success" },
-                  { time: "12:34:09", action: "output_generated", status: "success" },
+                  { time: "WEEK 1", action: "readiness_assessment", status: "success" },
+                  { time: "WEEK 3", action: "roadmap_approved", status: "success" },
+                  { time: "WEEK 5", action: "pilot_launched", status: "success" },
+                  { time: "WEEK 9", action: "team_trained", status: "success" },
+                  { time: "MONTH 4", action: "governance_established", status: "success" },
                 ].map((log, i) => (
                   <div
                     key={i}
@@ -477,7 +477,7 @@ export default function AgenticPage() {
         <div className="flex border-b border-black/[0.06]" style={{ animation: "marqueeLeft 28s linear infinite" }}>
           {[...Array(3)].map((_, rep) => (
             <div key={rep} className="flex shrink-0">
-              {["Web Research", "Code Generation", "Email Drafting", "Data Analysis", "PR Reviews", "Scheduling", "SQL Queries", "API Calls", "File Processing", "Monitoring"].map((cap) => (
+              {["Invoice Processing", "Lead Qualification", "Document Drafting", "Customer Support", "Demand Forecasting", "Report Automation", "Contract Review", "Data Entry", "Email Drafting", "Scheduling"].map((cap) => (
                 <div key={cap} className="flex items-center gap-6 px-10 py-5 border-r border-black/[0.06] shrink-0">
                   <span className="w-1.5 h-1.5 rounded-full bg-black/20 shrink-0" />
                   <span className="text-sm text-black/45 whitespace-nowrap tracking-wide">{cap}</span>
@@ -489,7 +489,7 @@ export default function AgenticPage() {
         <div className="flex" style={{ animation: "marqueeRight 22s linear infinite" }}>
           {[...Array(3)].map((_, rep) => (
             <div key={rep} className="flex shrink-0">
-              {["Report Writing", "Slack Summaries", "Lead Scoring", "Image Tagging", "Test Running", "Deployment", "Log Parsing", "Invoice Processing", "Meeting Notes", "Sentiment Analysis"].map((cap) => (
+              {["Inventory Forecasting", "Meeting Notes", "Bookkeeping", "Marketing Copy", "Knowledge Search", "Ticket Triage", "Compliance Checks", "Translation", "Sales Insights", "Workflow Automation"].map((cap) => (
                 <div key={cap} className="flex items-center gap-6 px-10 py-5 border-r border-black/[0.06] shrink-0">
                   <span className="w-1.5 h-1.5 rounded-full bg-black/12 shrink-0" />
                   <span className="text-sm text-black/30 whitespace-nowrap tracking-wide">{cap}</span>
@@ -506,16 +506,16 @@ export default function AgenticPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
               <PixelIcon type="agents" size={40} />
-              <div className="mt-4"><Tag>LIVE RIGHT NOW</Tag></div>
+              <div className="mt-4"><Tag>THE OPPORTUNITY</Tag></div>
               <RevealText className="mt-5 text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.05]">
-                {"Agents working\n24 / 7, autonomously."}
+                {"A vast market,\nstill underserved."}
               </RevealText>
               <p className="mt-6 text-base text-black/40 leading-relaxed max-w-sm">
-                At any moment, thousands of agents are running tasks on behalf of teams around the world — no human in the loop.
+                The UAE is home to over 557,000 SMEs — 94% of all businesses, employing 86% of the private workforce — yet most lack the capacity to adopt AI on their own.
               </p>
               <div className="mt-10 flex items-end gap-2">
                 <LiveAgentCounter />
-                <span className="text-black/30 text-sm mb-1 tracking-wide">agents active globally</span>
+                <span className="text-black/30 text-sm mb-1 tracking-wide">SMEs ready for AI adoption</span>
               </div>
             </div>
             <div className="relative">
@@ -530,35 +530,35 @@ export default function AgenticPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16 flex flex-col items-center">
             <PixelIcon type="pricing" size={40} />
-            <div className="mt-4"><Tag>PRICING</Tag></div>
+            <div className="mt-4"><Tag>ENGAGEMENTS</Tag></div>
             <RevealText className="mt-5 text-4xl md:text-5xl font-light tracking-tight leading-[1.05]">
-              {"Pay as your agents grow."}
+              {"Engagements that scale with you."}
             </RevealText>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3" onMouseMove={handleMouse}>
             {[
               {
-                name: "Sandbox",
-                price: "Free",
-                sub: "Start experimenting",
-                features: ["5 agents", "1,000 tasks/mo", "Community support", "Basic traces"],
+                name: "Readiness",
+                price: "AED 9.5K",
+                sub: "Know where you stand",
+                features: ["AI Readiness Assessment", "Process & data audit", "ROI opportunity map", "Executive readout"],
                 delay: 0,
               },
               {
-                name: "Builder",
-                price: "$49",
-                period: "/mo",
-                sub: "For teams shipping fast",
-                features: ["50 agents", "100K tasks/mo", "Priority support", "Full traces + replay", "Custom tools", "REST API"],
+                name: "Implementation",
+                price: "AED 45K",
+                period: "/project",
+                sub: "Deploy and train",
+                features: ["Everything in Readiness", "Tool deployment (Copilot, etc.)", "Custom workflow automation", "Department pilot rollout", "Bilingual team training", "8-week delivery"],
                 highlight: true,
                 delay: 80,
               },
               {
-                name: "Enterprise",
+                name: "Governance",
                 price: "Custom",
-                sub: "For orgs at scale",
-                features: ["Unlimited agents", "Unlimited tasks", "Dedicated infra", "SOC 2 / HIPAA", "SLA guarantees", "Custom contracts"],
+                sub: "Scale with confidence",
+                features: ["Org-wide rollout", "Ongoing AI support retainer", "Quarterly optimization reviews", "Governance framework", "Priority bilingual support", "Dedicated practice lead"],
                 delay: 140,
               },
             ].map((plan) => (
@@ -588,7 +588,7 @@ export default function AgenticPage() {
                     ? "bg-[#111] text-white hover:bg-[#333]"
                     : "border border-black/10 text-black/60 hover:border-black/25 hover:text-black hover:bg-black/[0.04]"
                 }`}>
-                  {plan.name === "Enterprise" ? "CONTACT SALES" : "GET STARTED"}
+                  {plan.name === "Governance" ? "CONTACT US" : "BOOK A CALL"}
                 </button>
               </BentoCard>
             ))}
@@ -625,10 +625,10 @@ export default function AgenticPage() {
         />
         <div className="relative z-10 max-w-2xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.05] mb-6">
-            Start building your<br />agent workforce.
+            Start your AI<br />journey today.
           </h2>
           <p className="text-sm text-black/45 leading-relaxed mb-10">
-            Join thousands of teams deploying AI agents that work around the clock, across every timezone.
+            Book a free AI Readiness consultation and discover where AI can cut costs and unlock growth for your business across the UAE and GCC.
           </p>
           {!submitted ? (
             <form
@@ -637,7 +637,7 @@ export default function AgenticPage() {
             >
               <input
                 type="email"
-                placeholder="your@email.com"
+                placeholder="you@company.com"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 required
@@ -647,13 +647,13 @@ export default function AgenticPage() {
                 type="submit"
                 className="px-8 py-3 bg-[#111] text-white text-sm rounded-xl hover:bg-[#333] transition-colors tracking-widest font-medium"
               >
-                JOIN
+                BOOK
               </button>
             </form>
           ) : (
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-emerald-600/20 bg-emerald-50 text-emerald-700 text-sm">
               <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-              {"You're on the list. We'll be in touch."}
+              {"Thank you. Our team will reach out to schedule your consultation."}
             </div>
           )}
         </div>
@@ -663,36 +663,35 @@ export default function AgenticPage() {
       {/* ── FOOTER ────────────────────────────────────────────────────────── */}
       <footer className="py-10 px-6 md:px-12 lg:px-20 border-t border-black/[0.06]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <span className="font-pixel text-xs tracking-[0.25em] text-black/50">AGENTIC</span>
+          <span className="font-pixel text-xs tracking-[0.25em] text-black/50">TECHSIGHT</span>
 
           {/* Nav sections */}
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
             {[
-              { label: "Platform",     href: "#platform" },
-              { label: "Agents",       href: "#agents" },
-              { label: "Workflow",     href: "#workflow" },
-              { label: "Integrations", href: "#integrations" },
-              { label: "Live",         href: "#live" },
-              { label: "Pricing",      href: "#pricing" },
+              { label: "Services",   href: "#platform" },
+              { label: "Industries", href: "#agents" },
+              { label: "Approach",   href: "#workflow" },
+              { label: "Technology", href: "#integrations" },
+              { label: "Market",     href: "#live" },
+              { label: "Engagements", href: "#pricing" },
             ].map(l => (
               <a key={l.label} href={l.href} className="text-xs text-black/35 hover:text-black/70 transition-colors tracking-widest">{l.label}</a>
             ))}
           </div>
 
-          {/* Legal links */}
+          {/* Contact links */}
           <div className="flex items-center gap-6">
             {[
-              { label: "Privacy", href: "#" },
-              { label: "Terms",   href: "#" },
-              { label: "Docs",    href: "#" },
-              { label: "GitHub",  href: "#" },
+              { label: "Email",    href: "mailto:aadnan@techsightinnovations.com" },
+              { label: "Website",  href: "https://www.techsightinnovations.com" },
+              { label: "LinkedIn", href: "#" },
             ].map(l => (
               <a key={l.label} href={l.href} className="text-xs text-black/25 hover:text-black/55 transition-colors tracking-widest">{l.label}</a>
             ))}
           </div>
         </div>
         <div className="max-w-6xl mx-auto mt-8 pt-6 border-t border-black/[0.04]">
-          <span className="text-xs text-black/20">© 2026 Agentic. All rights reserved.</span>
+          <span className="text-xs text-black/20">© 2025 TechSight Innovations FZE LLC. Empowering Technology. Securing the Future.</span>
         </div>
       </footer>
     </div>
