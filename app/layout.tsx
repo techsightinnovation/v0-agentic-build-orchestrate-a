@@ -1,4 +1,5 @@
 import { GoogleAnalytics } from '@next/third-parties/google'
+<GoogleAnalytics gaId="G-6E6M50G8H9" />
 import React from "react"
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, IBM_Plex_Sans } from 'next/font/google'
