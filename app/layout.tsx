@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: 'TechSight Innovations — AI Implementation & Training for SMEs',
     description: 'Practical, affordable AI implementation and training services for SMEs across the UAE and GCC.',
     type: 'website',
-    url: 'https://www.techsightinnovations.com',
+    url: 'https://www.techsightinnovation.com',
     siteName: 'TechSight Innovations',
   },
   twitter: {
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
 }
-
+import { GoogleAnalytics } from '@next/third-parties/google'
 export default function RootLayout({
   children,
 }: Readonly<{
