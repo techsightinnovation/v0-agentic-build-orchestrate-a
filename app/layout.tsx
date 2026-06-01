@@ -1,10 +1,10 @@
+import { GoogleAnalytics } from '@next/third-parties/google'
 import React from "react"
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, IBM_Plex_Sans } from 'next/font/google'
 import { Courier_Prime } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
-
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 const _courierPrime = Courier_Prime({ weight: ["400", "700"], subsets: ["latin"] });
@@ -57,6 +57,7 @@ export default function RootLayout({
         {children}
         <Analytics />
       </body>
+       <GoogleAnalytics gaId="G-6E6M50G8H9" />
     </html>
   )
 }
