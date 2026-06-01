@@ -55,8 +55,8 @@ export default function RootLayout({
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
+       <GoogleAnalytics gaId="G-6E6M50G8H9" />  
       </body>
-       <GoogleAnalytics gaId="G-6E6M50G8H9" />
-    </html>
+   </html>
   )
 }
