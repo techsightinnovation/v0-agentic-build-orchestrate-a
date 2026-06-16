@@ -32,7 +32,7 @@ export function MobileNav() {
         href="/"
         className="fixed top-5 left-5 z-[60] flex items-center gap-2.5 pointer-events-auto"
       >
-        <img src="/logo.png" alt="TechSight" className="h-7 w-auto" />
+        <img src="/logo.png" alt="TechSight" className="h-9 w-auto" />
       </Link>
 
       {/* Centered nav bar */}
@@ -58,7 +58,7 @@ export function MobileNav() {
             </div>
 
             <div className="flex items-center gap-2">
-              <Link href="/contact" className="text-[11px] px-4 py-2 rounded-xl border border-black/10 text-black/60 hover:text-black hover:border-black/20 hover:bg-black/[0.03] transition-all duration-200 tracking-wide hidden md:block" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+              <Link href="/contact" className="text-[11px] px-4 py-2 rounded-xl border border-black/10 text-black/60 hover:text-black hover:border-black/20 hover:bg-black/[0.03] transition-all duration-200 tracking-wide hidden md:block ml-4" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
                 BOOK ASSESSMENT
               </Link>
 
