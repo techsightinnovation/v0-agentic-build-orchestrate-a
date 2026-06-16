@@ -645,7 +645,10 @@ export default function AgenticPage() {
       {/* ── FOOTER ────────────────────────────────────────────────────────── */}
       <footer className="py-10 px-6 md:px-12 lg:px-20 border-t border-black/[0.06]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <span className="font-pixel text-xs tracking-[0.25em] text-black/50">TECHSIGHT</span>
+          <div className="flex items-center gap-2.5">
+            <img src="/logo.png" alt="TechSight" className="h-5 w-auto opacity-60" />
+            <span className="text-xs tracking-[0.25em] text-black/50" style={{ fontFamily: "'Courier Prime', monospace" }}>TECHSIGHT</span>
+          </div>
 
           {/* Nav sections */}
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3">

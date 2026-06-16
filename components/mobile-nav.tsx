@@ -34,7 +34,10 @@ export function MobileNav() {
           className="flex items-center justify-between px-5 py-3 rounded-2xl border border-black/[0.06]"
           style={NAV_STYLE}
         >
-          <span className="font-pixel text-xs tracking-[0.25em] text-black/70">TECHSIGHT</span>
+          <div className="flex items-center gap-2.5">
+            <img src="/logo.png" alt="TechSight" className="h-6 w-auto" />
+            <span className="text-sm font-medium tracking-tight text-black/80" style={{ fontFamily: "'IBM Plex Sans', sans-serif" }}>TechSight</span>
+          </div>
 
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-7" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
