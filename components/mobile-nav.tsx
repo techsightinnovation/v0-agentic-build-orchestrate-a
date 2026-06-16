@@ -26,92 +26,100 @@ export function MobileNav() {
   const close = () => setOpen(false)
 
   return (
-    <div className="fixed top-4 inset-x-0 z-50 flex justify-center px-4 pointer-events-none">
-      <div className="pointer-events-auto w-full max-w-3xl">
+    <>
+      {/* Logo — fixed top-left, outside nav */}
+      <Link
+        href="/"
+        className="fixed top-5 left-5 z-[60] flex items-center gap-2.5 pointer-events-auto"
+      >
+        <img src="/logo.png" alt="TechSight" className="h-7 w-auto" />
+      </Link>
 
-        {/* Main bar */}
-        <nav
-          className="flex items-center justify-between px-5 py-3 rounded-2xl border border-black/[0.06]"
-          style={NAV_STYLE}
-        >
-          <div className="flex items-center gap-2.5">
-            <img src="/logo.png" alt="TechSight" className="h-6 w-auto" />
-            <span className="text-sm font-medium tracking-tight text-black/80" style={{ fontFamily: "'IBM Plex Sans', sans-serif" }}>TechSight</span>
-          </div>
+      {/* Centered nav bar */}
+      <div className="fixed top-4 inset-x-0 z-50 flex justify-center px-4 pointer-events-none">
+        <div className="pointer-events-auto w-full max-w-3xl">
 
-          {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-7" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
-            {NAV_LINKS.map(l =>
-              l.page ? (
-                <Link key={l.label} href={l.href} className="text-[11px] text-black/60 hover:text-black transition-colors duration-200 tracking-wide">{l.label}</Link>
-              ) : (
-                <a key={l.label} href={l.href} className="text-[11px] text-black/60 hover:text-black transition-colors duration-200 tracking-wide">{l.label}</a>
-              )
-            )}
-          </div>
-
-          <div className="flex items-center gap-2">
-            <Link href="/contact" className="text-[11px] px-4 py-2 rounded-xl border border-black/10 text-black/60 hover:text-black hover:border-black/20 hover:bg-black/[0.03] transition-all duration-200 tracking-wide hidden md:block" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
-              BOOK ASSESSMENT
-            </Link>
-
-            {/* Burger — mobile only */}
-            <button
-              onClick={() => setOpen(v => !v)}
-              className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[5px] rounded-lg hover:bg-black/[0.04] transition-colors"
-              aria-label={open ? "Close menu" : "Open menu"}
-            >
-              <span
-                className="block h-px bg-black/60 transition-all duration-300 origin-center"
-                style={{
-                  width: "18px",
-                  transform: open ? "translateY(6px) rotate(45deg)" : "none",
-                }}
-              />
-              <span
-                className="block h-px bg-black/60 transition-all duration-300"
-                style={{
-                  width: "18px",
-                  opacity: open ? 0 : 1,
-                  transform: open ? "scaleX(0)" : "none",
-                }}
-              />
-              <span
-                className="block h-px bg-black/60 transition-all duration-300 origin-center"
-                style={{
-                  width: "18px",
-                  transform: open ? "translateY(-6px) rotate(-45deg)" : "none",
-                }}
-              />
-            </button>
-          </div>
-        </nav>
-
-        {/* Mobile dropdown */}
-        <div
-          className="md:hidden mt-2 overflow-hidden transition-all duration-300 ease-in-out"
-          style={{ maxHeight: open ? "320px" : "0px", opacity: open ? 1 : 0 }}
-        >
-          <div
-            className="rounded-2xl border border-black/[0.06] px-2 py-2 flex flex-col"
+          <nav
+            className="flex items-center justify-between px-5 py-3 rounded-2xl border border-black/[0.06]"
             style={NAV_STYLE}
           >
-            {NAV_LINKS.map(l =>
-              l.page ? (
-                <Link key={l.label} href={l.href} onClick={close} className="block px-4 py-3 text-sm text-black/60 hover:text-black hover:bg-black/[0.03] rounded-xl transition-colors tracking-wide" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>{l.label}</Link>
-              ) : (
-                <a key={l.label} href={l.href} onClick={close} className="block px-4 py-3 text-sm text-black/60 hover:text-black hover:bg-black/[0.03] rounded-xl transition-colors tracking-wide" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>{l.label}</a>
-              )
-            )}
-            <div className="mt-1 px-2 pb-1">
-              <Link href="/contact" onClick={close} className="block w-full text-center text-[11px] px-4 py-2.5 rounded-xl border border-black/10 text-black/60 hover:text-black hover:border-black/20 hover:bg-black/[0.03] transition-all duration-200 tracking-wide" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+            {/* Spacer to keep nav centered (same width as logo on left) */}
+            <div className="w-0 md:w-[100px]" />
+
+            {/* Desktop links */}
+            <div className="hidden md:flex items-center gap-7" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+              {NAV_LINKS.map(l =>
+                l.page ? (
+                  <Link key={l.label} href={l.href} className="text-[11px] text-black/60 hover:text-black transition-colors duration-200 tracking-wide">{l.label}</Link>
+                ) : (
+                  <a key={l.label} href={l.href} className="text-[11px] text-black/60 hover:text-black transition-colors duration-200 tracking-wide">{l.label}</a>
+                )
+              )}
+            </div>
+
+            <div className="flex items-center gap-2">
+              <Link href="/contact" className="text-[11px] px-4 py-2 rounded-xl border border-black/10 text-black/60 hover:text-black hover:border-black/20 hover:bg-black/[0.03] transition-all duration-200 tracking-wide hidden md:block" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
                 BOOK ASSESSMENT
               </Link>
+
+              {/* Burger — mobile only */}
+              <button
+                onClick={() => setOpen(v => !v)}
+                className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[5px] rounded-lg hover:bg-black/[0.04] transition-colors"
+                aria-label={open ? "Close menu" : "Open menu"}
+              >
+                <span
+                  className="block h-px bg-black/60 transition-all duration-300 origin-center"
+                  style={{
+                    width: "18px",
+                    transform: open ? "translateY(6px) rotate(45deg)" : "none",
+                  }}
+                />
+                <span
+                  className="block h-px bg-black/60 transition-all duration-300"
+                  style={{
+                    width: "18px",
+                    opacity: open ? 0 : 1,
+                    transform: open ? "scaleX(0)" : "none",
+                  }}
+                />
+                <span
+                  className="block h-px bg-black/60 transition-all duration-300 origin-center"
+                  style={{
+                    width: "18px",
+                    transform: open ? "translateY(-6px) rotate(-45deg)" : "none",
+                  }}
+                />
+              </button>
+            </div>
+          </nav>
+
+          {/* Mobile dropdown */}
+          <div
+            className="md:hidden mt-2 overflow-hidden transition-all duration-300 ease-in-out"
+            style={{ maxHeight: open ? "320px" : "0px", opacity: open ? 1 : 0 }}
+          >
+            <div
+              className="rounded-2xl border border-black/[0.06] px-2 py-2 flex flex-col"
+              style={NAV_STYLE}
+            >
+              {NAV_LINKS.map(l =>
+                l.page ? (
+                  <Link key={l.label} href={l.href} onClick={close} className="block px-4 py-3 text-sm text-black/60 hover:text-black hover:bg-black/[0.03] rounded-xl transition-colors tracking-wide" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>{l.label}</Link>
+                ) : (
+                  <a key={l.label} href={l.href} onClick={close} className="block px-4 py-3 text-sm text-black/60 hover:text-black hover:bg-black/[0.03] rounded-xl transition-colors tracking-wide" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>{l.label}</a>
+                )
+              )}
+              <div className="mt-1 px-2 pb-1">
+                <Link href="/contact" onClick={close} className="block w-full text-center text-[11px] px-4 py-2.5 rounded-xl border border-black/10 text-black/60 hover:text-black hover:border-black/20 hover:bg-black/[0.03] transition-all duration-200 tracking-wide" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+                  BOOK ASSESSMENT
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
-    </div>
+    </>
   )
 }
