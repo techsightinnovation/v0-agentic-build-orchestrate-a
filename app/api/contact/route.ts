@@ -1,4 +1,7 @@
 import { NextResponse } from "next/server"
+import { Resend } from "resend"
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: Request) {
   try {
@@ -9,28 +12,30 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Name, email, and message are required." }, { status: 400 })
     }
 
-    const payload = {
-      name,
-      email,
-      phone: phone || "—",
-      service: service || "General inquiry",
-      message,
-      timestamp: new Date().toISOString(),
+    if (!process.env.RESEND_API_KEY) {
+      console.log("Contact form submission (no email sent — RESEND_API_KEY not set):", { name, email, phone, service, message })
+      return NextResponse.json({ success: true, message: "Thank you! We'll be in touch within 24 hours." })
     }
 
-    console.log("Contact form submission:", payload)
-
-    // TODO: Add email notification via nodemailer or Resend
-    // Example with Resend:
-    // await resend.emails.send({
-    //   from: "TechSight <noreply@techsightinnovation.com>",
-    //   to: "aadnan@techsightinnovation.com",
-    //   subject: `New inquiry from ${name}`,
-    //   text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\nMessage: ${message}`,
-    // })
+    await resend.emails.send({
+      from: "TechSight <onboarding@resend.dev>",
+      to: "aadnan@techsightinnovation.com",
+      subject: `New inquiry from ${name} via TechSight website`,
+      text: [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Phone: ${phone || "—"}`,
+        `Service: ${service || "General inquiry"}`,
+        ``,
+        `Message:`,
+        message,
+      ].join("\n"),
+      replyTo: email,
+    })
 
     return NextResponse.json({ success: true, message: "Thank you! We'll be in touch within 24 hours." })
-  } catch {
+  } catch (err) {
+    console.error("Contact form error:", err)
     return NextResponse.json({ error: "Something went wrong. Please try again." }, { status: 500 })
   }
 }
