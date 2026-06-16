@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useRef, useEffect, useState, useCallback } from "react"
+import Link from "next/link"
 import { IntroAnimation, INTRO_DURATION_MS, HERO_REVEAL_MS } from "@/components/intro-animation"
 import { AgentInterface } from "@/components/agent-interface"
 import { PixelIcon } from "@/components/pixel-icon"
@@ -77,8 +78,6 @@ function Tag({ children }: { children: React.ReactNode }) {
 
 // ─── Main page ────────────────────────────────────────────────────────────────
 export default function AgenticPage() {
-  const [email, setEmail] = useState("")
-  const [submitted, setSubmitted] = useState(false)
   const [heroReady, setHeroReady] = useState(false)
   const [videoReady, setVideoReady] = useState(false)
   const handleIntroDone = useCallback(() => {
@@ -583,13 +582,16 @@ export default function AgenticPage() {
                     </li>
                   ))}
                 </ul>
-                <button className={`w-full py-3 rounded-xl text-sm tracking-widest transition-all duration-200 ${
-                  plan.highlight
-                    ? "bg-[#111] text-white hover:bg-[#333]"
-                    : "border border-black/10 text-black/60 hover:border-black/25 hover:text-black hover:bg-black/[0.04]"
-                }`}>
+                <Link
+                  href="/contact"
+                  className={`block w-full text-center py-3 rounded-xl text-sm tracking-widest transition-all duration-200 ${
+                    plan.highlight
+                      ? "bg-[#111] text-white hover:bg-[#333]"
+                      : "border border-black/10 text-black/60 hover:border-black/25 hover:text-black hover:bg-black/[0.04]"
+                  }`}
+                >
                   {plan.name === "Governance" ? "CONTACT US" : "BOOK A CALL"}
-                </button>
+                </Link>
               </BentoCard>
             ))}
           </div>
@@ -630,32 +632,12 @@ export default function AgenticPage() {
           <p className="text-sm text-black/45 leading-relaxed mb-10">
             Book a free AI Readiness consultation and discover where AI can cut costs and unlock growth for your business across the UAE and GCC.
           </p>
-          {!submitted ? (
-            <form
-              onSubmit={e => { e.preventDefault(); if (email) setSubmitted(true) }}
-              className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto"
-            >
-              <input
-                type="email"
-                placeholder="you@company.com"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                required
-                className="flex-1 bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#111] placeholder:text-black/25 focus:outline-none focus:border-black/25 transition-colors"
-              />
-              <button
-                type="submit"
-                className="px-8 py-3 bg-[#111] text-white text-sm rounded-xl hover:bg-[#333] transition-colors tracking-widest font-medium"
-              >
-                BOOK
-              </button>
-            </form>
-          ) : (
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-emerald-600/20 bg-emerald-50 text-emerald-700 text-sm">
-              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-              {"Thank you. Our team will reach out to schedule your consultation."}
-            </div>
-          )}
+          <Link
+            href="/contact"
+            className="inline-flex items-center px-10 py-3.5 bg-[#111] text-white text-sm rounded-xl hover:bg-[#333] transition-colors tracking-widest font-medium"
+          >
+            BOOK A CONSULTATION
+          </Link>
         </div>
       </section>
 
@@ -668,22 +650,28 @@ export default function AgenticPage() {
           {/* Nav sections */}
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
             {[
-              { label: "Services",   href: "#platform" },
-              { label: "Industries", href: "#agents" },
-              { label: "Approach",   href: "#workflow" },
-              { label: "Technology", href: "#integrations" },
-              { label: "Market",     href: "#live" },
+              { label: "Services",    href: "#platform" },
+              { label: "Industries",  href: "#agents" },
+              { label: "Approach",    href: "#workflow" },
+              { label: "Technology",  href: "#integrations" },
+              { label: "Market",      href: "#live" },
               { label: "Engagements", href: "#pricing" },
-            ].map(l => (
-              <a key={l.label} href={l.href} className="text-xs text-black/35 hover:text-black/70 transition-colors tracking-widest">{l.label}</a>
-            ))}
+              { label: "Case Studies", href: "/case-studies", page: true },
+              { label: "Contact",     href: "/contact", page: true },
+            ].map(l =>
+              l.page ? (
+                <Link key={l.label} href={l.href} className="text-xs text-black/35 hover:text-black/70 transition-colors tracking-widest">{l.label}</Link>
+              ) : (
+                <a key={l.label} href={l.href} className="text-xs text-black/35 hover:text-black/70 transition-colors tracking-widest">{l.label}</a>
+              )
+            )}
           </div>
 
           {/* Contact links */}
           <div className="flex items-center gap-6">
             {[
-              { label: "Email",    href: "mailto:aadnan@techsightinnovations.com" },
-              { label: "Website",  href: "https://www.techsightinnovations.com" },
+              { label: "Email",    href: "mailto:aadnan@techsightinnovation.com" },
+              { label: "Website",  href: "https://www.techsightinnovation.com" },
               { label: "LinkedIn", href: "#" },
             ].map(l => (
               <a key={l.label} href={l.href} className="text-xs text-black/25 hover:text-black/55 transition-colors tracking-widest">{l.label}</a>

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 
 const NAV_LINKS = [
   { label: "Services",   href: "#platform" },
@@ -8,6 +9,8 @@ const NAV_LINKS = [
   { label: "Technology", href: "#integrations" },
   { label: "Market",     href: "#live" },
   { label: "Pricing",    href: "#pricing" },
+  { label: "Case Studies", href: "/case-studies", page: true },
+  { label: "Contact",      href: "/contact", page: true },
 ]
 
 const NAV_STYLE = {
@@ -35,21 +38,19 @@ export function MobileNav() {
 
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-7" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
-            {NAV_LINKS.map(l => (
-              <a
-                key={l.label}
-                href={l.href}
-                className="text-[11px] text-black/60 hover:text-black transition-colors duration-200 tracking-wide"
-              >
-                {l.label}
-              </a>
-            ))}
+            {NAV_LINKS.map(l =>
+              l.page ? (
+                <Link key={l.label} href={l.href} className="text-[11px] text-black/60 hover:text-black transition-colors duration-200 tracking-wide">{l.label}</Link>
+              ) : (
+                <a key={l.label} href={l.href} className="text-[11px] text-black/60 hover:text-black transition-colors duration-200 tracking-wide">{l.label}</a>
+              )
+            )}
           </div>
 
           <div className="flex items-center gap-2">
-            <button className="text-[11px] px-4 py-2 rounded-xl border border-black/10 text-black/60 hover:text-black hover:border-black/20 hover:bg-black/[0.03] transition-all duration-200 tracking-wide hidden md:block" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+            <Link href="/contact" className="text-[11px] px-4 py-2 rounded-xl border border-black/10 text-black/60 hover:text-black hover:border-black/20 hover:bg-black/[0.03] transition-all duration-200 tracking-wide hidden md:block" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
               BOOK ASSESSMENT
-            </button>
+            </Link>
 
             {/* Burger — mobile only */}
             <button
@@ -92,21 +93,17 @@ export function MobileNav() {
             className="rounded-2xl border border-black/[0.06] px-2 py-2 flex flex-col"
             style={NAV_STYLE}
           >
-            {NAV_LINKS.map(l => (
-              <a
-                key={l.label}
-                href={l.href}
-                onClick={close}
-                className="px-4 py-3 text-sm text-black/60 hover:text-black hover:bg-black/[0.03] rounded-xl transition-colors tracking-wide"
-                style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
-              >
-                {l.label}
-              </a>
-            ))}
+            {NAV_LINKS.map(l =>
+              l.page ? (
+                <Link key={l.label} href={l.href} onClick={close} className="block px-4 py-3 text-sm text-black/60 hover:text-black hover:bg-black/[0.03] rounded-xl transition-colors tracking-wide" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>{l.label}</Link>
+              ) : (
+                <a key={l.label} href={l.href} onClick={close} className="block px-4 py-3 text-sm text-black/60 hover:text-black hover:bg-black/[0.03] rounded-xl transition-colors tracking-wide" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>{l.label}</a>
+              )
+            )}
             <div className="mt-1 px-2 pb-1">
-              <button className="w-full text-[11px] px-4 py-2.5 rounded-xl border border-black/10 text-black/60 hover:text-black hover:border-black/20 hover:bg-black/[0.03] transition-all duration-200 tracking-wide" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+              <Link href="/contact" onClick={close} className="block w-full text-center text-[11px] px-4 py-2.5 rounded-xl border border-black/10 text-black/60 hover:text-black hover:border-black/20 hover:bg-black/[0.03] transition-all duration-200 tracking-wide" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
                 BOOK ASSESSMENT
-              </button>
+              </Link>
             </div>
           </div>
         </div>
