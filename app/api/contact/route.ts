@@ -18,8 +18,8 @@ export async function POST(request: Request) {
 
     const resend = new Resend(apiKey)
 
-    await resend.emails.send({
-      from: "TechSight <onboarding@resend.dev>",
+    const emailRes = await resend.emails.send({
+      from: "onboarding@resend.dev",
       to: "aadnan@techsightinnovation.com",
       subject: `New inquiry from ${name} via TechSight website`,
       text: [
@@ -31,12 +31,14 @@ export async function POST(request: Request) {
         `Message:`,
         message,
       ].join("\n"),
-      replyTo: email,
     })
+
+    console.log("Resend response:", JSON.stringify(emailRes))
 
     return NextResponse.json({ success: true, message: "Thank you! We'll be in touch within 24 hours." })
   } catch (err) {
-    console.error("Contact form error:", err)
+    console.error("Contact form error:", err instanceof Error ? err.message : err)
+    console.error("Contact form error stack:", err instanceof Error ? err.stack : "")
     return NextResponse.json({ error: "Something went wrong. Please try again." }, { status: 500 })
   }
 }
